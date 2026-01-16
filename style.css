@@ -300,6 +300,11 @@ h3 {
     transform-origin: center bottom;
     display: flex;
     flex-direction: column;
+    /* Hardware acceleration hints */
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .gallery-card img {

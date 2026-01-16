@@ -94,10 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // In stack or currently active
                 const depth = index - currentIndex;
                 const scale = 1 - (depth * 0.05);
-                const translateY = depth * -20;
+                const translateY = depth * 20; // 20px down per card
+                const translateZ = depth * -50; // Push back in 3D space
                 const opacity = 1 - (depth * 0.3);
 
-                card.style.transform = `translateY(${translateY}px) scale(${scale})`;
+                // Use translate3d for GPU acceleration
+                card.style.transform = `translate3d(0, ${translateY}px, ${translateZ}px) scale(${scale})`;
                 card.style.opacity = opacity > 0 ? opacity : 0;
                 card.style.zIndex = totalPhotos - index;
                 card.style.pointerEvents = index === currentIndex ? 'auto' : 'none';
