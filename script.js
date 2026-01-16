@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             finalModal.classList.remove('visible');
             setTimeout(() => {
                 finalModal.classList.add('hidden');
-                revealBtn.style.display = 'block'; // Show button again
+                revealBtn.style.display = 'inline-block'; // Fix centering
             }, 500);
         }
     });
