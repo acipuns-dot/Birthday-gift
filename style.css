@@ -413,10 +413,8 @@ h3 {
 .modal.visible {
     opacity: 1;
     pointer-events: auto;
-    /* Reduced blur for performance while maintaining aesthetics */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background: rgba(255, 240, 243, 0.6);
+    /* REMOVED backdrop-filter to fix mobile lag */
+    background: rgba(255, 240, 243, 0.95);
 }
 
 .modal-content {
