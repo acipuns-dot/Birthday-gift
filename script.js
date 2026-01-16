@@ -145,7 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
     finalModal.addEventListener('click', (e) => {
         if (e.target === finalModal) {
             finalModal.classList.remove('visible');
-            setTimeout(() => finalModal.classList.add('hidden'), 500);
+            setTimeout(() => {
+                finalModal.classList.add('hidden');
+                revealBtn.style.display = 'block'; // Show button again
+            }, 500);
         }
     });
 
