@@ -127,8 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalModal = document.getElementById('final-modal');
 
     revealBtn.addEventListener('click', () => {
-        // Confetti burst
-        const duration = 5 * 1000;
+        // Confetti burst - Optimized for performance
+        const duration = 3 * 1000; // Reduced to 3 seconds
         const animationEnd = Date.now() + duration;
         const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -143,15 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 return clearInterval(interval);
             }
 
-            const particleCount = 50 * (timeLeft / duration);
+            const particleCount = 40 * (timeLeft / duration); // Reduced particle count
             confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
             confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-        }, 250);
+        }, 300); // Increased interval to 300ms
 
         // Show Modal
         revealBtn.style.display = 'none'; // Hide the button after click
         finalModal.classList.remove('hidden');
-        setTimeout(() => finalModal.classList.add('visible'), 10);
+        setTimeout(() => finalModal.classList.add('visible'), 100); // Slight delay for smoother transition
     });
 
     // Close modal click outside

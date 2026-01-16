@@ -408,9 +408,10 @@ h3 {
 .modal.visible {
     opacity: 1;
     pointer-events: auto;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 240, 243, 0.4);
+    /* Reduced blur for performance while maintaining aesthetics */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 240, 243, 0.6);
 }
 
 .modal-content {
